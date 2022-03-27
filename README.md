@@ -90,6 +90,13 @@ learn-kubernets -> is the image name and
 1.0 -> is the tag name
 ```
 
+
+If you are running a Mac then your default Docker system will use **arm64** architecture. But on Linode your VM's are most likely built using **amd64** architecture. This version mismatch will cause problem when you deploy the image. So if you are on Mac build your image using the following command.
+
+```sh
+docker image build  --platform=linux/amd64 -t 56faisal/learn-kubernetes:1.0 .
+```
+
 Then see the image on the list locally.
 
 ```sh
